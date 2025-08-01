@@ -1,0 +1,57 @@
+@echo off
+:: 1. Criar pasta principal e subpastas
+cd %USERPROFILE%\Desktop
+mkdir projeto_responsivo
+cd projeto_responsivo
+mkdir public src docs
+
+:: 2. Dentro de public, criar subpastas
+cd public
+mkdir html css js media
+
+:: 3. Verificar diretório atual (opcional)
+cd media
+cd ..
+
+:: 4. Criar arquivo home.html em html
+cd html
+echo Projeto Responsivo> home.html
+
+:: 5. Criar arquivo theme.css em css
+cd ..\css
+(
+echo body {
+echo     margin: 0;
+echo     padding: 0;
+echo     background-color: lightgray;
+echo }
+) > theme.css
+
+:: 6. Dentro de media criar subpastas imagens e fontes
+cd ..\media
+mkdir imagens fontes
+
+:: 7. Copiar theme.css para docs
+cd ..\css
+copy theme.css ..\..\docs
+
+:: 8. Na pasta js, criar arquivos
+cd ..\js
+echo console.log("Site responsivo pronto!"); > responsivo.js
+echo console.log("Utilitários carregados!"); > utils.js
+
+:: 9. Renomear utils.js para helper.js
+rename utils.js helper.js
+
+:: 10. Listar arquivos de public e subpastas
+cd ..
+dir /s
+
+:: 11. Excluir theme.css de docs
+del ..\docs\theme.css
+
+:: 12. Abrir home.html no navegador
+cd html
+start home.html
+
+pause
