@@ -1,5 +1,5 @@
-@echo off
-:: 1. Criar pasta principal e subpastas
+
+:: 1. Criar pasta principal e subpastas!!
 cd %USERPROFILE%\Desktop
 mkdir projeto_responsivo
 cd projeto_responsivo
