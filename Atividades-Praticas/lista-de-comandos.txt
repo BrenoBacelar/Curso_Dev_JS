@@ -1,0 +1,61 @@
+Id CommandLine
+  -- -----------
+   1 try . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbenc... 
+   2 git config --global user.name "Breno Bacelar"
+   3 git config --global user.email "brenobacelar12@hotmail.com"
+   4 git init
+   5 git status
+   6 git add .
+   7 git commit -m "Primeiros passos git hub"
+   8 git branch -M main
+   9 git push origin main
+  10 git branch "trabalhos"
+  11 git branch -M main
+  12 switch -b "trabalhos"
+  13 git branch -M main.git checkout "trabalhos"
+  14 git status
+  15 git switch -b "trabalhos"
+  16 git switch -b trabalhos
+  17 git switch -c "trabalhos"
+  18 git branch
+  19 git marge "trabalhos"
+  20 git merge "trabalhos"
+  21 git branch
+  22 git branch -d trabalhos
+  23 git branch
+  24 git remoto adicionar origem https://github.com/BrenoBacelar/Curso_Dev_JS.git 
+  25 git remote add origin https://github.com/BrenoBacelar/Curso_Dev_JS.git       
+  26 git branch -M main
+  27 git push -u origin main
+  28 git push -u origin main
+  29 git commit -m "comcluido"
+  30 git add .
+  31 git commit -m "concluido"
+  32 git add .
+  33 git add .
+  34 git add .
+  35 git add .
+  36 git commit -m "concluido"
+  37 got log
+  38 git push
+  39 git push
+  40 git init
+  41 git add .
+  42 git commit -m "terceiro commit"...
+  43 git remote add origin https://github.com/BrenoBacelar/Curso_Dev_JS.git       
+  44 git branch -M main
+  45 git -u origin main
+  46 git add .
+  47 git push
+  48 git branch -M main
+  49 git remote add origin https://github.com/BrenoBacelar/Curso_Dev_JS.git       
+  50 git commit -m "commit"...
+  51 git push
+  52 git push
+  53 git commit -m "commit"...
+  54 git commit -m "commit1"...
+  55 git push
+  56 git add .
+  57 git push
+  58 git add .
+  59 git push
