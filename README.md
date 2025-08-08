@@ -1,6 +1,6 @@
 # Nome do Repositório
 
-Bem-vindo ao **CURSO_DEV_JS**! Este projeto foi criado para [esse repositorio foi criado para fims de apredizado sobre o curso de java script e tudo que sera ministrado nele, onde busco aprender e melhorar meus conhecimentos no ramo da programação mas em fogo na linguagem JS ].
+Bem-vindo ao **CURSO_DEV_JS**! Este projeto foi criado para [esse repositorio foi criado para fims de apredizado sobre o curso de java script e tudo que sera ministrado nele, onde busco aprender e melhorar meus conhecimentos no ramo da programação mas em foco na linguagem JS ].
 
 ---
 
