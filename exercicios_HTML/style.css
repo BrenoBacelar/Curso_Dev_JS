@@ -1,0 +1,110 @@
+/* Reset básico */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #000000, #000000, #000000);
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Cabeçalho futurista */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #fbfbfb;
+  text-shadow: 0 0 10px #020202, 0 0 20px #000000, 0 0 40px #000000;
+}
+
+img{max-width: 100%;}
+
+.foto {
+  width: 720px;   /* largura */
+  height: 1280px;  /* altura (3x4) */
+  
+  object-fit: cover;
+  
+  box-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff;
+}
+
+
+.descricao {
+  font-size: 1.2rem;
+  color: #8f36f5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Seções principais */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(246, 253, 253, 0.6);
+}
+
+section h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #8153ec;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px #8153ec;
+}
+
+section ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+section ul li {
+  margin: 8px 0;
+  padding-left: 15px;
+  position: relative;
+}
+
+section ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  text-shadow: 0 0 6px #6f3fe0;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #b0c7ff;
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+footer p {
+  text-shadow: 0 0 6px #ffffff;
+}
