@@ -1,0 +1,13 @@
+body{
+            background-color: rgb(240, 248, 255);
+            
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-size: 21px;
+            color: cadetblue;
+            
+        }
