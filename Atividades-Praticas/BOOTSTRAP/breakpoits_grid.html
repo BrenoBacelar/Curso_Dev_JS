@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo CDN</title>
+    <style>
+        .alt500{
+            height: 500px;
+        }
+
+        .alt100{
+            height: 100px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Exemplo BreakPoints</h1>
+    
+    <p class="d-nome d-sm-block bg-primary">Visivel A partir de SM >= 576px</p>
+
+    <p class="d-nome d-md-block bg-success">Visivel A Partir de MD >= 768px </p>
+
+    <p class="d-nome d-lg-block bg-dark text-white">Visivel a partir de LG >= 992px</p>
+
+    <p class="d-nome d-xl-block bg-danger">Visilvel a Partir de XL >= 1200px</p>
+
+    <p class="d-nome d-xxl-block bg-info">Visivel A Partir de XXL >= 1400px</p>
+
+    <!--DIV CONTAINER-->
+    <h1>EXEMPLOS DE GRID</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col alt100 bg-success"></div>
+            <div class="col alt100 bg-danger"></div>
+            <div class="col alt100 bg-warning"></div>
+            <div class="col alt100 bg-dark"></div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        
+        <div class="row">
+            <div class="col-12 alt100 bg-danger">
+                
+            </div>
+            <div class="col-12 col-lg-3 alt500 bg-warning">
+
+            </div>
+            <div class="col-12 col-lg-9 alt500 bg-primary">
+
+            </div>
+            <div class="col-12 alt100 bg-success">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

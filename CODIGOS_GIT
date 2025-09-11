@@ -1,0 +1,11 @@
+Fazer login no github
+
+git clone <repositório> -> clonar o repositório de javascript
+
+Realizar as tarefas do dia, salvar no repositório local.
+
+git config --global user.name "Seu Nome" → Adiciona o nome do usuário na configuração global.
+git config --global user.email "seuemail@example.com" → Adiciona o e-mail do usuário na configuração global.
+git add .  -> adiciona os arquivos
+git commit -m "mensagem" -> cria o versionamento
+git push -> enviar para o repositório remoto
