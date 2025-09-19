@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-4">
+        <header class="text-center">
+            <h1>Exemplos Práticos DOM</h1>
+        </header>
+
+        <main>   
+
+            <div class="card my-5">
+                <div class="card-header">Lendo o Conteúdo de um Elemento</div>
+                <div class="card-body">
+                    <p id="paragrafo-exemplo">Este é um parágrafo com um texto inicial.</p>
+                    <button class="btn btn-secondary" id="btn-ler">Ler Texto do Parágrafo</button>
+                </div>
+            </div>
+
+            <div class="card my-5">
+                <div class="card-header">Alterando o Conteúdo de um Elemento</div>
+                <div class="card-body">
+                    <h3 id="titulo-para-mudar">Clique no botão para mudar este título!</h3>
+                    <button class="btn btn-primary" id="btn-mudar">Mudar Título</button>
+                </div>
+            </div>
+
+            <div class="card my-5">
+                <div class="card-header">Interagindo com Campos de Input</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="nome-usuario" class="form-label">Digite seu nome:</label>
+                        <input type="text" class="form-control" id="nome-usuario" placeholder="Seu nome aqui">
+                    </div>
+                    <button class="btn btn-success" id="btn-saudacao">Enviar Saudação</button>
+                    <p class="mt-3 fs-5" id="resultado-saudacao"></p>
+                </div>
+            </div>
+            <div class="card my-5">
+                <div class="card-header">Mudar cor fundo da tela</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="cor-fundo" class="form-label">Escolha uma cor:</label>
+                        <input type="color" class="form-control" id="cor-fundo">
+                    </div>
+                    <button class="btn btn-warning" id="btn-mudar-cor">Mudar Cor de Fundo</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+
+        //EXEMPLO 1
+
+        const btnler = document.querySelector("#btn-ler");
+        const paragrafoExemplo = document.querySelector("#paragrafo-exemplo");
+
+        function lerTexoParagrafo(){
+
+            const textoParagrafo = paragrafoExemplo.textContent;
+            const textoParagrafo2 = document.querySelector("#paragrafo-exemplo").textContent;
+
+            alert(textoParagrafo);
+            console.log(textoParagrafo);
+        }
+
+        btnler.addEventListener('click',lerTexoParagrafo);
+
+        //EXEMPLO2
+        const btnMudar = document.querySelector("#btn-mudar");
+        const textoMudar = document.querySelector("#titulo-para-mudar");
+
+        btnMudar.addEventListener('click', function(){
+            textoMudar.textContent = "Alterei O texto pro Meu Nome -> BRENO BACELAR";
+        });
+
+        //EXEMPLO 3
+        const btnSaudacao = document.querySelector("#btn-saudacao");
+        const inputNome = document.querySelector("#nome-usuario");
+        const resultadoSaudacao = document.querySelector("#resultado-saudacao");
+
+        btnSaudacao.addEventListener('click', function (){
+            const valorInput = inputNome.value;
+            resultadoSaudacao.textContent = `olá ${valorInput},seja Bem Vindo`
+        })
+
+        //inputNome.addEventListener('input', function(){
+          //  const valorInput = inputNome.value;
+         //   resultadoSaudacao.textContent = `olá ${valorInput},seja Bem Vindo`
+       // })
+
+        inputNome.addEventListener('change', function(){
+            const valorInput = inputNome.value;
+            resultadoSaudacao.textContent = `olá ${valorInput},seja Bem Vindo`
+        })
+
+        //EXEMPLO 4
+        const btnMUdarCor = document.querySelector("#btn-mudar-cor");
+        const inputCor = document.querySelector("#cor-fundo");
+
+        btnMUdarCor.addEventListener('click',function(){
+            document.body.style.backgroundColor = inputCor.value;
+            document.body.removeAttribute('class');
+        })
+    </script>
+</body>
+</html>
