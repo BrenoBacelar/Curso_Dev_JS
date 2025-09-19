@@ -1,0 +1,43 @@
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --accent:#1d72b8;
+  --muted:#6b7280;
+  --radius:10px;
+  --shadow: 0 8px 20px rgba(15,23,42,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111;padding:28px}
+.container{max-width:900px;margin:0 auto}
+.header{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.header h1{margin:0;font-size:20px}
+.subtitle{margin:0;color:var(--muted)}
+
+.table-card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04)}
+
+table.schedule{width:100%;border-collapse:collapse;font-size:15px}
+table.schedule caption{caption-side:top;text-align:left;font-weight:600;margin-bottom:8px}
+
+table.schedule thead th{background:linear-gradient(90deg, rgba(29,114,184,0.08), rgba(29,114,184,0.04));text-align:left;padding:12px;border-bottom:2px solid rgba(0,0,0,0.04)}
+
+table.schedule tbody td{padding:12px;border-bottom:1px dashed rgba(0,0,0,0.05)}
+
+table.schedule tbody tr:hover{background:linear-gradient(90deg, rgba(29,114,184,0.03), transparent)}
+
+/* Responsividade: em telas pequenas, a tabela vira cards */
+@media (max-width:640px){
+  table.schedule, table.schedule thead, table.schedule tbody, table.schedule th, table.schedule td, table.schedule tr{
+    display:block;
+  }
+  table.schedule thead{display:none}
+  table.schedule tbody tr{margin-bottom:12px;background:#fbfdff;padding:12px;border-radius:8px}
+  table.schedule tbody td{padding:6px 0;border-bottom:none}
+  table.schedule tbody td:before{
+    content: attr(data-label);
+    display:block;font-weight:700;color:var(--muted);margin-bottom:6px;font-size:13px
+  }
+}
+
+.footer{margin-top:12px;text-align:center;color:var(--muted);font-size:13px}
