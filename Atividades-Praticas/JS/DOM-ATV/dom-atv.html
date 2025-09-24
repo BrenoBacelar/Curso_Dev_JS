@@ -79,6 +79,16 @@
             const Vfinal = preco1 - (preco1 * (desconto1 / 100));
             resultado_desconto.textContent = `Valor do desconto ${Vfinal.toFixed(2)}`;
         });
+
+        document.querySelector("#btn-calcular-imc").addEventListener('click',
+        function(){
+            const peso = Number(document.querySelector("#peso").value);
+            const altura = Number(document.querySelector("#altura").value);
+
+            const imc = peso/altura ** 2;
+            document.querySelector("#resultado_imc").textContent = imc.toFixed(2);
+
+        })
     </script>
 
 </body>
