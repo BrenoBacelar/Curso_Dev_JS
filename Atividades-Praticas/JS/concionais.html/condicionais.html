@@ -13,9 +13,9 @@ function verificarParOuImpar3() {
     const numero = parseFloat(prompt("Informe um número inteiro:"));
     
     if (numero > 2 === 0) {
-        console.log("O número " + numero + " é par.");
+        alert("O número " + numero + " é par.");
     } else {
-        console.log("O número " + numero + " é ímpar.");
+        alert("O número " + numero + " é ímpar.");
     }
 }
 verificarParOuImpar3();
@@ -26,14 +26,14 @@ function calcularFrete4() {
 
     const frete = parseFloat(prompt("Infome o valor"));
     if (valorCompra > 200) {
-        console.log("frete = 0"); // Frete Grátis
+        alert("frete = 0"); // Frete Grátis
     } else if (valorCompra >= 100 && valorCompra <= 199.99) {
-        console.log("frete = 15"); // Frete de R$ 15,00
+        alert("frete = 15"); // Frete de R$ 15,00
     } else if (valorCompra < 100) {
-        console.log("frete = 25"); // Frete de R$ 25,00
+        alert("frete = 25"); // Frete de R$ 25,00
     }
 
-    console.log("O valor do frete a ser pago é: R$ " + frete.toFixed(2));
+    alert("O valor do frete a ser pago é: R$ " + frete.toFixed(2));
 }
 calcularFrete4();
 
@@ -43,9 +43,9 @@ function calcularBonus9() {
 
     if (anosDeServico > 5) {
         const bonus = salario * 0.05; // Calculando 5% sobre o salário
-        console.log(`O bônus do funcionário é: R$${bonus.toFixed(2)}`);
+        alert(`O bônus do funcionário é: R$${bonus.toFixed(2)}`);
     } else {
-        console.log("O funcionário não tem direito a bônus.");
+        alert("O funcionário não tem direito a bônus.");
     }
 }
 calcularBonus9();
@@ -56,9 +56,9 @@ function verificarDoacaoSangue10() {
     const resfriado = prompt("Você está resfriado? (sim/não): ").toLowerCase();
 
     if (idade >= 18 && idade <= 69 && peso > 50 && resfriado !== "sim") {
-        console.log("Você pode doar sangue.");
+        alert("Você pode doar sangue.");
     } else {
-        console.log("Você não atende aos requisitos para doar sangue.");
+        alert("Você não atende aos requisitos para doar sangue.");
     }
 }
 
