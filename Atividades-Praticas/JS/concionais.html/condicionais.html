@@ -10,7 +10,7 @@
 <script>
 // Função para verificar se o número é par ou ímpar
 function verificarParOuImpar3() {
-    const numero = ("Informe um número inteiro:");
+    const numero = parseFloat(prompt("Informe um número inteiro:"));
     
     if (numero > 2 === 0) {
         console.log("O número " + numero + " é par.");
@@ -24,7 +24,7 @@ verificarParOuImpar3();
 function calcularFrete4() {
     const valorCompra = ("Informe o valor da sua compra:");
 
-    const frete = ("Informe o Frete");
+    const frete = parseFloat(prompt("Infome o valor"));
     if (valorCompra > 200) {
         console.log("frete = 0"); // Frete Grátis
     } else if (valorCompra >= 100 && valorCompra <= 199.99) {
@@ -38,8 +38,8 @@ function calcularFrete4() {
 calcularFrete4();
 
 function calcularBonus9() {
-    const salario = ("Digite o salário do funcionário: ");
-    const anosDeServico = ("Digite os anos de serviço do funcionário: ");
+    const salario = parseFloat(prompt("Digite o salário do funcionário: "));
+    const anosDeServico = parseFloat(prompt("Digite os anos de serviço do funcionário: "));
 
     if (anosDeServico > 5) {
         const bonus = salario * 0.05; // Calculando 5% sobre o salário
@@ -51,8 +51,8 @@ function calcularBonus9() {
 calcularBonus9();
 
 function verificarDoacaoSangue10() {
-    const idade = ("Digite a sua idade: ");
-    const peso = ("Digite o seu peso em kg: ");
+    const idade = parseFloat(prompt("Digite a sua idade: "));
+    const peso = parseFloat(prompt("Digite o seu peso em kg: "));
     const resfriado = prompt("Você está resfriado? (sim/não): ").toLowerCase();
 
     if (idade >= 18 && idade <= 69 && peso > 50 && resfriado !== "sim") {
