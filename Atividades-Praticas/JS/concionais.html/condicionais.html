@@ -38,11 +38,12 @@ function calcularFrete4() {
 calcularFrete4();
 
 function calcularBonus9() {
-    const salario = parseFloat(prompt("Digite o salário do funcionário: "));
-    const anosDeServico = parseFloat(prompt("Digite os anos de serviço do funcionário: "));
+    const salario = Number(prompt("Digite o salário do funcionário: "));
+    const anosDeServico = Number(prompt("Digite os anos de serviço do funcionário: "));
 
     if (anosDeServico > 5) {
         const bonus = salario * 0.05; // Calculando 5% sobre o salário
+        // const BONUS IGUAL A (5 / 100)
         alert(`O bônus do funcionário é: R$${bonus.toFixed(2)}`);
     } else {
         alert("O funcionário não tem direito a bônus.");
@@ -51,9 +52,9 @@ function calcularBonus9() {
 calcularBonus9();
 
 function verificarDoacaoSangue10() {
-    const idade = parseFloat(prompt("Digite a sua idade: "));
-    const peso = parseFloat(prompt("Digite o seu peso em kg: "));
-    const resfriado = prompt("Você está resfriado? (sim/não): ").toLowerCase();
+    const idade = Number(prompt("Digite a sua idade: "));
+    const peso = Number(prompt("Digite o seu peso em kg: "));
+    const resfriado = Number(prompt("Você está resfriado? (sim/não): ").toLowerCase());
 
     if (idade >= 18 && idade <= 69 && peso > 50 && resfriado !== "sim") {
         alert("Você pode doar sangue.");
