@@ -10,7 +10,7 @@
 <script>
 // Função para verificar se o número é par ou ímpar
 function verificarParOuImpar3() {
-    const numero = parseFloat(prompt("Informe um número inteiro:"));
+    const numero = Number(prompt("Informe um número inteiro:"));
     
     if (numero > 2 === 0) {
         alert("O número " + numero + " é par.");
@@ -22,7 +22,7 @@ verificarParOuImpar3();
 
 // Função para calcular o valor do frete baseado no valor da compra
 function calcularFrete4() {
-    const valorCompra = ("Informe o valor da sua compra:");
+    const valorCompra = Number(prompt("Informe o valor da sua compra:"));
 
     const frete = parseFloat(prompt("Infome o valor"));
     if (valorCompra > 200) {
