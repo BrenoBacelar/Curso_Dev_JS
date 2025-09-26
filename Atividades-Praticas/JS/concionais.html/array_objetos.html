@@ -3,9 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Array Objetos</title>
 </head>
 <body>
-    
+
+    <p>APERTE F12 PARA VER OS RESULTADOS</p>
+
+    <script>
+    // ARRAYS E OBJETOS
+
+    //ARRAYS
+
+    const frutas = ["Uva","Morango","Maracuja"];
+
+    console.log(frutas);
+
+        //Tamanho do ARRAY
+    console.log(frutas.length)
+
+    //ACESSO AS INFORMAÇÕES
+    console.log(frutas[3]);
+    console.log(frutas[3]);
+    console.log(frutas[frutas.length - 1]);
+
+    //ADICIONAR ITEMS
+    frutas.push("Abacaxi");
+    console.log("frutas");
+
+    frutas.unshift("Limão");
+    console.log(frutas);
+
+    //ALTERAÇÃO DE ITEMS
+    frutas[4] = "Cereja";
+    console.log(frutas);
+
+    //EXCLUIR ITEMS
+    frutas.pop();
+    console.log(frutas);
+
+    frutas.shift();
+    console.log(frutas);
+
+    frutas.splice(1,1,"Morango");
+    console.log(frutas);
+
+    delete frutas[1];
+    console.log(frutas);
+
+    //EXIBIÇÃO
+    console.log(frutas.splice(2,5));
+
+    //OBJETOS
+
+        const pessoa = {
+            nome : "Breno",
+            idade : 21,
+            altura : 1.74,
+            amigos : ["João, Matheus"]
+            
+        }
+        console.log(pessoa.nome);
+        console.log(pessoa["amigos"][0]);
+
+        //INSERIR
+
+        pessoa.cidade ="PPRUDENTE";
+        console.log(pessoa);
+
+        //ALTERAR
+        pessoa.cidade ="REGENTE";
+        console.log(pessoa);
+
+        //EXCLUIR
+        delete pessoa.cidade;
+        console.log(pessoa);
+
+
+        //EXERCICIO1
+        const musicas = ["The fires and Flame","show me in again","provavelmente"];
+        //imprimir primeira musica
+        console.log(musicas[0]);
+        //adicionar musica na ultima posição
+        musicas.push("depois das onze");
+        //remover intem da minha playlist
+        musicas.splice([2]);
+        console.log(musicas);
+
+        //exercicio1();
+
+        //EXERCICIO2
+        const filme = {
+            titulo : "Ford vs Ferrari",
+            Ano : 19,
+            diretor : "James Mangold",        
+        }
+        //IMPRIMIR FRASES
+        console.log(`o Filme${filme.titulo}, dirigidor por${filme.diretor}, foi lançado em ${filme.ano}`);
+        //CRIAR PROPRIEDADES PERSONAGENS COM ARRAYS
+        filme.personagens = ["Ken Milles","Querow Shellby","Henri Ford"];
+        //IMPRIMIR PRIMEIRO PERSONAGEM
+        console.log(filme.personagens[0]);
+        //IMPIRMIR OBJETO
+        console.log(filme);
+        
+
+        //EXERCICIO#
+    </script>
 </body>
 </html>
