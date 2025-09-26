@@ -74,7 +74,7 @@
         if(nome && idade && curso){
             alunos.push({nome,idade,curso});
             alert("ALUNO CADASTRADO COM SUCESSO");
-            cancelarCAD();
+            CancelarCAD;
         }
         else{
             alert("PREENCHA TODOS OS CAMPOS");
@@ -89,6 +89,19 @@
 
         btnSalvar.addEventListener('click',Cadastrar);
         btnCancelar.addEventListener('click',CancelarCAD);
+
+        let idAtual =0;
+        const nome = document.querySelector("#aluno-nome");
+        const idade = document.querySelector("#aluno-idade");
+        const curso = document.querySelector("#aluno-curso");
+
+        function exibirAluno(){
+            if(alunos.length > 0){
+                nome.textContent = alunos[idAtual].nome;
+                idade.textContent = alunos[idAtual].idade;
+                curso.textContent = alunos[idAtual].curso;
+            }
+        }
     </script>
 </body>
 
