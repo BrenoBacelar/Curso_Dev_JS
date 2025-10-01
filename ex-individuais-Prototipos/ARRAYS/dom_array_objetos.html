@@ -74,7 +74,9 @@
         if(nome && idade && curso){
             alunos.push({nome,idade,curso});
             alert("ALUNO CADASTRADO COM SUCESSO");
-            CancelarCAD;
+            CancelarCAD();
+            idAtual = alunos.length -1;
+            exibirAluno();
         }
         else{
             alert("PREENCHA TODOS OS CAMPOS");
@@ -91,6 +93,7 @@
         btnCancelar.addEventListener('click',CancelarCAD);
 
         let idAtual =0;
+
         const nome = document.querySelector("#aluno-nome");
         const idade = document.querySelector("#aluno-idade");
         const curso = document.querySelector("#aluno-curso");
@@ -100,8 +103,37 @@
                 nome.textContent = alunos[idAtual].nome;
                 idade.textContent = alunos[idAtual].idade;
                 curso.textContent = alunos[idAtual].curso;
+
+                document.querySelector(".ficha-alunos").classList.remove('d-none');
+            }
+            else{
+                document.querySelector(".ficha-alunos").classList.add('d-none');
             }
         }
+
+        function proximo(){
+            idAtual++;
+            if (idAtual >= alunos.length){
+                idAtual = 0
+            }
+            exibirAluno();
+        }
+
+
+        function anterior(){
+            idAtual--;
+            if(idAtual< 0){
+                idAtual = alunos.length -1;
+            }
+            exibirAluno();
+        }
+
+        const btnProximo = document.querySelector("#btn-Proximo");
+        const btnAnterior = document.querySelector("#btn-Anterior");
+
+        btnProximo.addEventListener('click',proximo);
+        btnAnterior.addEventListener('click',anterior);
+    </script>
     </script>
 </body>
 
