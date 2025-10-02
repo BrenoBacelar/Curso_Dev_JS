@@ -24,6 +24,56 @@
     </div>
 
     <script>
+        const produtos = [
+            {
+            id: 1,
+            nome: "injeção-eletronica",
+            preco: 4500,
+            imagem: "https://placehold.co/300x200?text=injeção-eletronica"
+            },
+            {
+            id: 2,
+            nome:"kit-suspencao",
+            preco: 5000,
+            imagem: "https://placehold.co/300x200?text=kit-suspencao"
+            },
+            {
+            id:3,
+            nome:"kit-turbo",
+            preco:3800,
+            imagem:"https://placehold.co/300x200?text=kit-turbo",
+            },
+            {
+            id: 4,
+            nome:"kit-embreagem",
+            preco:4670,
+            imagem:"https://placehold.co/300x200?text=kit-embreagem"
+            },
+        ];
+
+        const catalogo = document.querySelector("#catalogo-container");
+
+        function exibirItens(){
+
+            const itens = produtos.map(produto => {
+            return `<div class="card">
+                    <img src="${produto.imagem}" class="card-img-top" alt="Imagem de ${produto.nome}">
+                    <div class="card-body">
+                        <h5 class="${produto.nome}">Card title</h5>
+                        <p class="${produto.preco}">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    </div>`;})
+
+                    console.log(itens);
+
+                    const itensCatalogo = itens.join('');
+
+                    catalogo.innerHTML = itensCatalogo;
+
+                    
+        }
+        exibirItens();
       
     </script>
 </body>
