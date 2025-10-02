@@ -29,26 +29,38 @@
             id: 1,
             nome: "injeção-eletronica",
             preco: 4500,
-            imagem: "https://placehold.co/300x200?text=injeção-eletronica"
+            imagem: "https://placehold.co/300x200?text=Injeção-Eletronica"
             },
             {
             id: 2,
             nome:"kit-suspencao",
             preco: 5000,
-            imagem: "https://placehold.co/300x200?text=kit-suspencao"
+            imagem: "https://placehold.co/300x200?text=Kit-Suspencao"
             },
             {
             id:3,
             nome:"kit-turbo",
             preco:3800,
-            imagem:"https://placehold.co/300x200?text=kit-turbo",
+            imagem:"https://placehold.co/300x200?text=Kit-Turbo",
             },
             {
             id: 4,
             nome:"kit-embreagem",
             preco:4670,
-            imagem:"https://placehold.co/300x200?text=kit-embreagem"
+            imagem:"https://placehold.co/300x200?text=Kit-Embreagem"
             },
+            {
+            id: 5,
+            nome:"Pneu-Slick",
+            preco:7000,
+            imagem:"https://placehold.co/300x200?text=Pneu-Slick"
+            },
+            {
+            id: 6,
+            nome:"Rodas",
+            preco:3800,
+            imagem:"https://placehold.co/300x200?text=Rodas"
+            }
         ];
 
         const catalogo = document.querySelector("#catalogo-container");
@@ -56,14 +68,15 @@
         function exibirItens(){
 
             const itens = produtos.map(produto => {
-            return `<div class="card">
+            return `<div class="col-lg-4 col-md-6">
+                    <div class="card">
                     <img src="${produto.imagem}" class="card-img-top" alt="Imagem de ${produto.nome}">
                     <div class="card-body">
-                        <h5 class="${produto.nome}">Card title</h5>
-                        <p class="${produto.preco}">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">${produto.nome}</h5>
+                    <p class="card-text">${produto.preco.toLocaleString("pt-BR",{style:"currency", currency:"BRL"})}</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
-                    </div>`;})
+                    </div></div>`;})
 
                     console.log(itens);
 
