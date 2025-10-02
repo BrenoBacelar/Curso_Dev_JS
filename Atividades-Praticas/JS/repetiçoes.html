@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Repetições</title>
+</head>
+<body>
+    <p>F12</p>
+    <script>
+        const nomes = ["acf,ram,poul,biuls"];
+        const numeros =["40,50,60,70"];
+        const alunos = [
+            {nome: "acf" , nota:60},
+            {nome: "ram" , nota:40},
+            {nome: "poul" , nota:50},
+            {nome: "biuls" , nota:100}
+        ];
+
+        //FOR /INICIO + CONDIÇÂO + OQUE FAZER
+        for (let i = 0; i <=5; i++){
+            console.log(i);
+        }
+
+        for (let i = 0; i <nomes.length; i++){
+            console.log(`${alunos[i]}`);
+        }
+        //WHILE
+        let contador = 0;
+        while(contador < 3){
+            console.log(contador);
+            contador++;
+        }
+
+        let contador2 = 0;
+        while(contador2 < 10){
+            if(contador2 === 3){
+            console.log(contador);
+            continue;
+            contador++;
+            }
+            if(contador2 === 5){
+                break;
+            }
+        }
+        //DO WHILE
+        let contador3 = 10
+        do{
+            console.log(contador3);
+            contador3++;
+        }while(contador3 < 10);
+
+        //METODOS DE ARRAY
+
+        //FOREACH
+        nomes.forEach(function(nome){
+            console.log(nome);
+        });
+
+        nomes.forEach(nomes => console.log(nome));
+
+        alunos.forEach(alunos => console.log(alunos.nome));
+
+        //MAP 
+        const nmrDobrados = numeros.map(numeros => numero * 2);
+
+        //FILTER
+        const nmrPares = numeros.filter(numeros => numeros % 2 !== 0);
+        console.log(nmrPares);
+
+        const alunosAPR = alunos.filter(alunos => alunos.nota > 8);
+        console.log(alunosAPR);
+
+        //REDUCE
+        const SMnumeros = numeros.reduce((SMfinal, numeros) => SMfinal + numeros, 37);
+        console.log(SMnumeros);
+        
+    </script>
+</body>
+</html>
