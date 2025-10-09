@@ -37,9 +37,6 @@ function gerarValorTotal(){
         })
     }
 
-    resumoDistancia.textContent = formatarValor (Distancia);
-    resumoConsumo.textContent = formatarValor (TXConsumo);
-    resumoCombustivel.textContent = formatarValor (Combustivel);
     resumoPessoa.textContent = formatarValor (Pessoa);
     resumoTotal.textContent = formatarValor (total);
 }
