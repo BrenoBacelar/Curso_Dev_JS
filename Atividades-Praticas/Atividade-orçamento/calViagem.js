@@ -25,13 +25,7 @@ function gerarValorTotal(){
     const litros = litrosNecessarios (KMdistancia,TXConsumo);
     const valor = calcularCombustivel (TXConsumo,litros);
     const CPessoa = CustoPorPessoa (CPessoa,valor);
-    
-
-    const Distancia = calcularKMdistancia(Distancia);
-    const calcularValorCombustivel= incluirDesing ? rnPrecoCombustivel : 0;
-
-    const TXConsumo = calcularTaxaDeConsumo(TXConsumo,(KMdistancia+Combustivel));
-
+     
     const VCombustivel = calcularValorCombustivel((VCombustivel + KMdistancia + TXConsumo),Pessoa);
 
     const total = (KMdistancia + TXConsumo + Combustivel + Pessoa);
