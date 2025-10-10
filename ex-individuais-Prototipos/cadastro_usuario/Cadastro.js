@@ -92,8 +92,8 @@ function reenderizarTabela(){
             <td>${user.sobrenome}</td>
             <td>${user.email}</td>
             <td>
-            <button class="btn btn-warning" data-id = "${user.id}">Editar</button>
-             <button class="btn btn-danger" data-id = "${user.id}">Excluir</button>
+            <button class="btn btn-sm  btn-warning" data-id = "${user.id}">Editar</button>
+             <button class="btn btn-sm btn-danger" data-id = "${user.id}">Excluir</button>
             </td>
         `
         tabelaCorpo.appendChild(tr);
