@@ -1,5 +1,5 @@
 
-const usuarios = JSON.parse(localStorage.getItem("cadastro_usuarios")) || [];
+let usuarios = JSON.parse(localStorage.getItem("Cadastro_Usuarios")) || [];
 
 //ELEMENTOS 
 const telaLista = document.querySelector("#tela-lista");
@@ -21,6 +21,11 @@ const inputCidade = document.querySelector("#user-cidade");
 const inputEstado = document.querySelector("#user-estado");
 const inputObs = document.querySelector("#user-obs");
 
+const form = document.querySelector("#user-form");
+const tabelaCorpo = document.querySelector("#user-table-body");
+let idEmEdicao = null;
+const formTitulo = document.querySelector("#form-titulo");
+const btnBuscarCep = document.querySelector("#btn-buscar-cep")
 
 // FUNÇÕES 
 function mostrarLista(){
@@ -30,9 +35,11 @@ function mostrarLista(){
 }
 
 
-function mostrarCadastro(){
+function mostrarCadastro(editar = false){
     telaLista.classList.add("d-none");
     telaCasdatro.classList.remove("d-none");
+    console.log(editar);
+    formTitulo.textContent = editar === true ? "Editar Usuario" : "Adicionar Novo Usuario";
 }
 
 function salvarUsuario(){
@@ -44,6 +51,7 @@ function salvarUsuario(){
     const cep = inputCep.value;
     const numero = inputNumero.value;
     const complemento = inputComplemento.value;
+    const Rua = inputRua.value;
     const bairro = inputBairro.value;
     const cidade = inputCidade.value;
     const estado = inputEstado.value;
@@ -55,36 +63,59 @@ function salvarUsuario(){
 
     const usuario = {
         id: id || Date.now(),
-        nome,
-        sobrenome,
-        email,
-        cep,
-        numero,
-        complemento,
-        bairro,
-        cidade,
-        estado,
-        obs
+        nome,sobrenome,email,cep,numero,Rua,complemento,bairro,cidade,estado,obs
     }
 
-    usuarios.push(usuario);
+    if(idEmEdicao){
+        const index = usuarios.findIndex(user => user.id == idEmEdicao); // localiza retorna a posição caso  contrario retorna -1
+        if(index){
+            usuarios[index] = usuarios;
+        }
+    }else{
+        usuarios.push(usuario);
+    }
     salvarNoStorage();
+    mostrarLista();
+    idEmEdicao = null;
+    form.reset();
 }
 
 function salvarNoStorage(){
    localStorage.setItem("Cadastro_Usuarios",JSON.stringify(usuarios));     
 }
 
-function editarUsuario(){
+function editarUsuario(id){
+    const user = usuarios.find(user => user.id === id);
+    if(!user)return;
 
+    idEmEdicao = id;
+
+    inputId.value = user.id;
+    inputNome.value = user.nome;
+    inputSobreNome.value = user.sobrenome;
+    inputEmail.value = user.email;
+    inputCep.value = user.cep;
+    inputRua.value = user.Rua;
+    inputNumero.value = user.numero;
+    inputComplemento.value = user.complemento;
+    inputBairro.value = user.bairro;
+    inputCidade.value = user.cidade;
+    inputEstado.value = user.estado;
+    inputObs.value = user.obs;
+
+    mostrarCadastro(true);
 }
 
-function ExcluirUsuario(){
-
+function ExcluirUsuario(id){
+    if(confirm("Você Tem certeza que deseja excluir esse usuario????")){
+        usuarios = usuarios.filter(user => user.id !== id);
+        salvarNoStorage();
+        reenderizarTabela();
+    }
 }
 
 function reenderizarTabela(){
-    tabelaCorpo.innnerHTML  ="";
+    tabelaCorpo.innerHTML  = "";
     usuarios.forEach(user => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -100,11 +131,51 @@ function reenderizarTabela(){
     });    
 }
 
+async function buscarCep(){
+    const cep = inputCep.value.replace(/\D/g,"");
+    if(cep.length === 8){
+        try{
+            const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+            const dados = await resposta.json();
+
+            if(!dados.error){
+                inputRua.value = dados.logradouro;
+                inputBairro.value = dados.bairro;
+                inputCidade.value = dados.localidade;
+                inputEstado.value = dados.estado;
+            }
+            
+        }catch (error){
+            alert("ERRO AO BUSCAR O CEP, VERIFIQUE O NUMERO TENTE NOVAMENTE");
+            console.log(error);
+        }
+    }else{
+        alert("CEP INVALIDO POR FAVOR INSIRA O CEP CORRETAMENTE CONTENDO 8 DIGITOS");
+    }
+
+}
 
 function inicializacao(){
     btnAdicionar.addEventListener("click", mostrarCadastro);
     btnVoltar.addEventListener("click",mostrarLista);
+    btnBuscarCep.addEventListener("click",buscarCep);
+
     form.addEventListener("submit",salvarUsuario);
+    tabelaCorpo.addEventListener("click",(event)=> {
+        const target = event.target.closest("button");
+        if(!target) return;
+        const id = Number(target.dataset.id);
+
+        if(isNaN(id))return;
+
+        if(target.classList.contains("btn-danger")){
+            ExcluirUsuario(id);
+        }else if(target.classList.contains("btn-warning")){
+            editarUsuario(id);
+        }
+    });
+    
+      
     reenderizarTabela();
 }
 
