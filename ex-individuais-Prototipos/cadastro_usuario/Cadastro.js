@@ -26,6 +26,7 @@ const tabelaCorpo = document.querySelector("#user-table-body");
 let idEmEdicao = null;
 const formTitulo = document.querySelector("#form-titulo");
 const btnBuscarCep = document.querySelector("#btn-buscar-cep")
+const inputBusca = document.querySelector("#user-busca");
 
 // FUNÇÕES 
 function mostrarLista(){
@@ -155,11 +156,28 @@ async function buscarCep(){
 
 }
 
+function buscarUsuario(){
+    //lowercase deixa tudo minusculo
+    // try removem os espaçoes dos estremos 
+    const textoBusca = inputBusca.value.toLowerCase().try();
+
+    if(textoBusca.length === 0){
+        reenderizarTabela();
+        return;
+    }
+
+    const usuariosFiltrados = usuarios.filter(user => {
+        return user.nome.includes(textoBusca) || user.sobrenome.includes(textoBusca) || user.email.includes(textoBusca);
+    });
+
+    reenderizarTabela();
+}
+
 function inicializacao(){
     btnAdicionar.addEventListener("click", mostrarCadastro);
     btnVoltar.addEventListener("click",mostrarLista);
     btnBuscarCep.addEventListener("click",buscarCep);
-
+    inputBusca.addEventListener("input",buscarUsuario);
     form.addEventListener("submit",salvarUsuario);
     tabelaCorpo.addEventListener("click",(event)=> {
         const target = event.target.closest("button");
