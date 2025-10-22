@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const conta1 = {titular: "Lucas", saldo: 500, juros: 10}
+        const conta2 = {titular: "Maria", saldo: 5000}
+
+        function exibirSaldo(conta){
+            console.log(`O saldo da conta é ${conta.saldo}`);
+        }
+
+        exibirSaldo(conta1);
+        exibirSaldo(conta2);
+
+        class ContaBancaria{
+            constructor(titular, saldoInicial){
+                this.titular = titular;
+                this.saldoInicial = saldoInicial;
+            }
+
+            exibirSaldo(){
+                console.log(`O saldo da conta é ${this.saldo}`);
+            }
+        }
+
+    const contaLucas = new ContaBancaria("Lucas", 500);
+    const contaMaria = new ContaBancaria("Maria", 5000);
+    contaLucas.exibirSaldo();
+
+        // classe Produto
+        class produto{
+            constructor(nome,preco,estoque){
+                this.nome = nome;
+                this.preco = preco;
+                this.estoque = estoque;
+            }
+
+            descrever(){
+                console.log(`Produto: ${this.nome},seu valor é ${this.preco} e o estoque atual é ${this.estoque}`);
+                
+                caneca.descrever();
+                tenis.descrever();
+
+                // manipular os produtos
+                console.log("vendas e reposições");
+                caneca.descrever(2);
+                tenis.descrever(3);
+
+
+            }
+
+            
+            
+
+            vender(quantidade){
+                if(quantidade > this.estoque){
+                    console.log(`estoque insuficiente para a venda Temos ${this.estoque} de unidades`);
+                    return
+                }
+
+                this.estoque -= quantidade;
+                console.log(`${quantidade} unidades vendidas com sucesso`);
+            }
+
+            repor(quantidade){
+                this.estoque += quantidade;
+                console.log(`estoque renovados ${this.quantidade} unidades do produto ${this.nome} adicionados ao estoque`);
+            }
+
+        }
+
+        const caneca = new Produto("canetaStar","29,99","12");
+        const tenis = new Produto("Tenis Nike","329,99","14");
+
+
+
+    </script>
+</body>
+</html>
